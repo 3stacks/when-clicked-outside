@@ -8,7 +8,10 @@ Add a click listener to fire a callback for everywhere on the window except your
 
 ```javascript
 
+// ES6
 import whenClickedOutside from '@lukeboyle/when-clicked-outside';
+// CommonJs
+const whenClickedOutside = require('@lukeboyle/when-clicked-outside');
 
 whenClickedOutside('#element', whenClickedOutsideCallback, {});
 
@@ -22,7 +25,10 @@ function whenClickedOutsideCallback(event) {
 
 ```javascript
 
+// ES6
 import whenClickedOutside from '@lukeboyle/when-clicked-outside';
+// CommonJs
+const whenClickedOutside = require('@lukeboyle/when-clicked-outside');
 
 const listener = whenClickedOutside('#element', whenClickedOutsideCallback, {});
 

@@ -1,3 +1,7 @@
+# 2.0.2
+
+- docs: update the readme with commonJs require
+
 # 2.0.1
 
 - fix: build issue when publishing

@@ -6,19 +6,28 @@
 export function whenClickedOutside(element, callback, config = {}) {
     let parsedElement;
     if (typeof element === 'string') {
-        parsedElement = document.querySelector(element);
+        parsedElement = verifyElementExists(document.querySelector(element));
+    } else if (element instanceof HTMLElement) {
+        parsedElement = verifyElementExists(element);
     } else {
-        parsedElement = element;
+        throw new TypeError('whenClickedOutside was expecting a `string` or `HTMLElement`')
     }
 
     const listener = verifyClick.bind(event, parsedElement, callback);
     document.addEventListener('click', listener, config.options || {});
-
     return {
         element: element,
         destroy() {
             document.removeEventListener('click', listener, config.options || {});
         }
+    }
+}
+
+function verifyElementExists(element) {
+    if (element instanceof HTMLElement === false) {
+        throw new ReferenceError('Specified element does not exist');
+    } else {
+        return element;
     }
 }
 

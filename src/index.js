@@ -3,7 +3,7 @@
  * @param {Function} callback
  * @param {Object} config
  */
-export function whenClickedOutside(element, callback, config = {}) {
+export default function whenClickedOutside(element, callback, config = {}) {
     let parsedElement;
     if (typeof element === 'string') {
         parsedElement = verifyElementExists(document.querySelector(element));

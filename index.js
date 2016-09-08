@@ -1,7 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
 /**
  * @param {String | HTMLElement} element
  * @param {Function} callback
@@ -18,6 +16,7 @@ function whenClickedOutside(element, callback) {
     } else {
         throw new TypeError('whenClickedOutside was expecting a `string` or `HTMLElement`');
     }
+
     var listener = verifyClick.bind(event, parsedElement, callback);
     document.addEventListener('click', listener, config.options || {});
     return {
@@ -42,4 +41,4 @@ function verifyClick(element, callback) {
     }
 }
 
-exports.whenClickedOutside = whenClickedOutside;
+module.exports = whenClickedOutside;

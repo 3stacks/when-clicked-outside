@@ -1,4 +1,8 @@
-# 2.0.3
+# 2.0.1
+
+- fix: build issue when publishing
+
+# 2.0.0
 
 - breaking change: Export whenClickedOutside by default
 

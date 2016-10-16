@@ -31,8 +31,8 @@ function verifyElementExists(element) {
     }
 }
 
-function verifyClick(element, callback) {
-    if (event.target !== element && !element.contains(event.target)) {
-        callback(event);
+function verifyClick(element, callback, MouseEvent) {
+    if (MouseEvent.target !== element && !element.contains(MouseEvent.target)) {
+        callback(MouseEvent);
     }
 }

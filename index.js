@@ -6,7 +6,7 @@
  * @param {Object} config
  */
 function whenClickedOutside(element, callback) {
-    var config = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
+    var config = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
 
     var parsedElement = void 0;
     if (typeof element === 'string') {
@@ -35,9 +35,9 @@ function verifyElementExists(element) {
     }
 }
 
-function verifyClick(element, callback) {
-    if (event.target !== element && !element.contains(event.target)) {
-        callback(event);
+function verifyClick(element, callback, MouseEvent) {
+    if (MouseEvent.target !== element && !element.contains(MouseEvent.target)) {
+        callback(MouseEvent);
     }
 }
 

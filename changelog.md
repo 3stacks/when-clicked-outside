@@ -1,3 +1,7 @@
+# 2.0.3
+
+- fix: add explicit reference to the `MouseEvent` in click verification function
+
 # 2.0.2
 
 - docs: update the readme with commonJs require

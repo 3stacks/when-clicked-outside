@@ -5,7 +5,7 @@ const listener = whenClickedOutside('#element', whenClickedOutsideCallback, {});
 function getRandomColor() {
     const letters = '0123456789ABCDEF';
     let color = '#';
-    for (var i = 0; i < 6; i++ ) {
+    for (let i = 0; i < 6; i = i + 1 ) {
         color = color + `${letters[Math.floor(Math.random() * 16)]}`;
     }
     return color;
@@ -13,5 +13,5 @@ function getRandomColor() {
 
 function whenClickedOutsideCallback(event) {
     console.log(event);
-    document.getElementById('element').setAttribute('style', `background-color:${getRandomColor()}`);
+    document.getElementById('element').style.backgroundColor = getRandomColor();
 }

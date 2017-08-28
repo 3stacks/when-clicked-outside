@@ -64,3 +64,34 @@ To set the standard addEventListener, add an 'options' element to the config obj
 ### Returns
 
 Returns an object with a reference to your element, and a destroy function to remove the listener.
+
+# Changelog
+
+## 2.0.4
+
+- fix: remove reference to window.event to address a bug in firefox
+
+## 2.0.3
+
+- fix: add explicit reference to the `MouseEvent` in click verification function
+
+## 2.0.2
+
+- docs: update the readme with commonJs require
+
+## 2.0.1
+
+- fix: build issue when publishing
+
+## 2.0.0
+
+- breaking change: Export whenClickedOutside by default
+
+## 1.0.2
+
+- refactor: tidy verifyElementExists function
+
+## 1.0.1
+
+- fix: add error handling for incorrect types
+- fix: add error handling for non-existent elements

@@ -5,6 +5,7 @@
  */
 export default function whenClickedOutside(element, callback, config = {}) {
     let parsedElement;
+
     if (typeof element === 'string') {
         parsedElement = verifyElementExists(document.querySelector(element));
     } else if (element instanceof HTMLElement) {
@@ -13,8 +14,10 @@ export default function whenClickedOutside(element, callback, config = {}) {
         throw new TypeError('whenClickedOutside was expecting a `string` or `HTMLElement`')
     }
 
-    const listener = verifyClick.bind(event, parsedElement, callback);
+    const listener = verifyClick.bind(null, parsedElement, callback);
+
     document.addEventListener('click', listener, config.options || {});
+
     return {
         element: element,
         destroy() {
@@ -31,8 +34,14 @@ function verifyElementExists(element) {
     }
 }
 
-function verifyClick(element, callback, MouseEvent) {
-    if (MouseEvent.target !== element && !element.contains(MouseEvent.target)) {
-        callback(MouseEvent);
+/**
+ * 
+ * @param element
+ * @param callback
+ * @param event
+ */
+function verifyClick(element, callback, event) {
+    if (event.target !== element && !element.contains(event.target)) {
+        callback(event);
     }
 }

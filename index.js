@@ -9,6 +9,7 @@ function whenClickedOutside(element, callback) {
     var config = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
 
     var parsedElement = void 0;
+
     if (typeof element === 'string') {
         parsedElement = verifyElementExists(document.querySelector(element));
     } else if (element instanceof HTMLElement) {
@@ -17,8 +18,10 @@ function whenClickedOutside(element, callback) {
         throw new TypeError('whenClickedOutside was expecting a `string` or `HTMLElement`');
     }
 
-    var listener = verifyClick.bind(event, parsedElement, callback);
+    var listener = verifyClick.bind(null, parsedElement, callback);
+
     document.addEventListener('click', listener, config.options || {});
+
     return {
         element: element,
         destroy: function destroy() {
@@ -35,9 +38,9 @@ function verifyElementExists(element) {
     }
 }
 
-function verifyClick(element, callback, MouseEvent) {
-    if (MouseEvent.target !== element && !element.contains(MouseEvent.target)) {
-        callback(MouseEvent);
+function verifyClick(element, callback, mouseEvent) {
+    if (mouseEvent.target !== element && !element.contains(mouseEvent.target)) {
+        callback(mouseEvent);
     }
 }
 

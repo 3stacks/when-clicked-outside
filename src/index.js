@@ -26,6 +26,11 @@ export default function whenClickedOutside(element, callback, config = {}) {
     }
 }
 
+/**
+ *
+ * @param {HTMLElement} element
+ * @returns {HTMLElement|ReferenceError}
+ */
 function verifyElementExists(element) {
     if (element instanceof HTMLElement === false) {
         throw new ReferenceError('Specified element does not exist');
@@ -35,10 +40,10 @@ function verifyElementExists(element) {
 }
 
 /**
- * 
- * @param element
- * @param callback
- * @param event
+ *
+ * @param {HTMLElement} element
+ * @param {Function} callback
+ * @param {MouseEvent} event
  */
 function verifyClick(element, callback, event) {
     if (event.target !== element && !element.contains(event.target)) {

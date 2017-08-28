@@ -1,6 +1,6 @@
 {
   "name": "@lukeboyle/when-clicked-outside",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Micro-library to trigger a callback when a user clicks anything BUT your target element.",
   "main": "index.js",
   "jsnext:main": "src/index.js",
@@ -41,6 +41,6 @@
     "rollup-plugin-npm": "^1.4.0"
   },
   "dependencies": {
-    "babel-runtime": "^6.9.2"
+    "babel-runtime": "^6.26.0"
   }
 }

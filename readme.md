@@ -67,6 +67,10 @@ Returns an object with a reference to your element, and a destroy function to re
 
 # Changelog
 
+## 2.0.5
+
+- fix: add missing dependency
+
 ## 2.0.4
 
 - fix: remove reference to window.event to address a bug in firefox

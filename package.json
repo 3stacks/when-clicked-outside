@@ -1,6 +1,6 @@
 {
   "name": "@lukeboyle/when-clicked-outside",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "Micro-library to trigger a callback when a user clicks anything BUT your target element.",
   "main": "index.js",
   "jsnext:main": "src/index.js",

@@ -1,7 +1,7 @@
 /**
- * @param {String | HTMLElement} element
+ * @param {string | HTMLElement} element
  * @param {Function} callback
- * @param {Object} config
+ * @param {{element : HTMLElement, destroy : Function}} config
  */
 export default function whenClickedOutside(element, callback, config = {}) {
     let parsedElement;
@@ -28,7 +28,7 @@ export default function whenClickedOutside(element, callback, config = {}) {
 
 /**
  *
- * @param {HTMLElement} element
+ * @param {HTMLElement} [element]
  * @returns {HTMLElement|ReferenceError}
  */
 function verifyElementExists(element) {

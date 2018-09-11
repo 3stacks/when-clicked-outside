@@ -6,7 +6,7 @@
   "jsnext:main": "src/index.js",
   "scripts": {
     "prepublishOnly": "npm run build:all",
-    "build:all": "npm run build && npm run build-demo",
+    "build:all": "npm run build:lib && npm run build:demo",
     "build:lib": "rollup --config rollup.config.js",
     "build:demo": "parcel build ./demo/src/index.html --out-dir ./demo/build"
   },

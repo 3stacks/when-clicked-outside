@@ -1,30 +1,28 @@
 {
-  "name": "@lukeboyle/when-clicked-outside",
-  "version": "2.1.0",
-  "description": "Micro-library to trigger a callback when a user clicks anything BUT your target element.",
-  "main": "index.js",
-  "module": "index.ts",
-  "scripts": {
-    "prepublishOnly": "npm run build:all",
-    "build:all": "npm run build:lib && npm run build:demo",
-    "build:lib": "rollup --config rollup.config.js",
-    "build:demo": "parcel build ./demo/index.html --out-dir ./demo/build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://3stacks@github.com/3stacks/when-clicked-outside.git"
-  },
-  "author": "Luke Boyle",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/3stacks/when-clicked-outside/issues"
-  },
-  "homepage": "https://github.com/3stacks/when-clicked-outside#readme",
-  "devDependencies": {
-    "@rollup/plugin-typescript": "^5.0.2",
-    "prettier": "^2.1.1",
-    "rollup": "^2.26.10",
-    "tslib": "^2.0.1",
-    "typescript": "^4.0.2"
-  }
+	"name": "@lukeboyle/when-clicked-outside",
+	"version": "2.1.0",
+	"description": "Micro-library to trigger a callback when a user clicks anything BUT your target element.",
+	"main": "index.js",
+	"module": "index.ts",
+	"scripts": {
+		"prepublishOnly": "npm run build:lib",
+		"build:lib": "rollup --config rollup.config.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://3stacks@github.com/3stacks/when-clicked-outside.git"
+	},
+	"author": "Luke Boyle",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/3stacks/when-clicked-outside/issues"
+	},
+	"homepage": "https://github.com/3stacks/when-clicked-outside#readme",
+	"devDependencies": {
+		"@rollup/plugin-typescript": "^5.0.2",
+		"prettier": "^2.1.1",
+		"rollup": "^2.26.10",
+		"tslib": "^2.0.1",
+		"typescript": "^4.0.2"
+	}
 }

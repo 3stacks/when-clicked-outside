@@ -1,9 +1,8 @@
 {
 	"name": "@lukeboyle/when-clicked-outside",
-	"version": "2.1.0",
+	"version": "2.1.1",
 	"description": "Micro-library to trigger a callback when a user clicks anything BUT your target element.",
 	"main": "index.js",
-	"module": "index.ts",
 	"scripts": {
 		"prepublishOnly": "npm run build:lib",
 		"build:lib": "rollup --config rollup.config.js"

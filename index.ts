@@ -1,9 +1,15 @@
-/**
- * @param {string | HTMLElement} element
- * @param {Function} callback
- * @param {{element : HTMLElement, destroy : Function}} config
- */
-export default function whenClickedOutside(element, callback, config = {}) {
+export type Element = string | HTMLElement
+
+export interface IClickedOutsideListener {
+    destroy: () => void;
+    element: Element
+}
+
+export interface ICreateClickedOutsideListenerConfig {
+    options?: boolean | AddEventListenerOptions
+}
+
+export default function whenClickedOutside(element : Element, callback: (event: MouseEvent) => void, config: ICreateClickedOutsideListenerConfig = {}): IClickedOutsideListener {
     let parsedElement;
 
     if (typeof element === 'string') {
@@ -26,26 +32,15 @@ export default function whenClickedOutside(element, callback, config = {}) {
     }
 }
 
-/**
- *
- * @param {HTMLElement} [element]
- * @returns {HTMLElement|ReferenceError}
- */
-function verifyElementExists(element) {
-    if (element instanceof HTMLElement === false) {
+function verifyElementExists(element: unknown) : HTMLElement {
+    if (!(element instanceof HTMLElement)) {
         throw new ReferenceError('Specified element does not exist');
-    } else {
-        return element;
     }
+
+    return element;
 }
 
-/**
- *
- * @param {HTMLElement} element
- * @param {Function} callback
- * @param {MouseEvent} event
- */
-function verifyClick(element, callback, event) {
+function verifyClick(element: HTMLElement, callback: (event: MouseEvent) => void, event: any): void {
     if (event.target !== element && !element.contains(event.target)) {
         callback(event);
     }

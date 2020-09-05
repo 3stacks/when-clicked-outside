@@ -1,16 +1,11 @@
-import babel from 'rollup-plugin-babel';
+import typescript from '@rollup/plugin-typescript';
 
 export default {
-    format: 'cjs',
-    entry: 'src/index.js',
-    dest: 'index.js',
-    plugins: [
-        babel({
-            babelrc: false,
-            exclude: 'node_modules/**',
-            presets: [
-                ['@babel/preset-env']
-            ]
-        })
-    ]
-}
+	input: 'index.ts',
+	output: {
+		file: 'index.js',
+		format: 'cjs',
+		exports: 'default',
+	},
+	plugins: [typescript()],
+};

@@ -1,4 +1,4 @@
-import whenClickedOutside from '../../src/index';
+import whenClickedOutside from '../index';
 
 const listener = whenClickedOutside('#element', whenClickedOutsideCallback, {});
 
